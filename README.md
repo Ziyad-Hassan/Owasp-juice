@@ -52,7 +52,7 @@ An attacker may gain access to sensitive admin features and exploit them to comp
 
 **Evidence:**  
 - Example: Enumerating paths such as `/admin` using **ffuf** revealed the admin login page.
-- ![Enumeration](Screenshots/Screenshot2024-12-27203119.png)
+- ![Enumeration](Screenshots/Screenshot2024-12-27203119.jpg)
 
 **Remediation Steps:**  
 - Restrict access to sensitive paths using authentication and authorization mechanisms.
