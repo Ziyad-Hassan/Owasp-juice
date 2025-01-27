@@ -52,7 +52,7 @@ An attacker may gain access to sensitive admin features and exploit them to comp
 
 **Evidence:**  
 - Example: Enumerating paths such as `/admin` using **ffuf** revealed the admin login page.
-- ![Enumeration](screenshots/Screenshot2024-12-27203119.png)
+- ![Enumeration](Screenshots/Screenshot2024-12-27194424.png)
 
 **Remediation Steps:**  
 - Restrict access to sensitive paths using authentication and authorization mechanisms.
@@ -72,7 +72,7 @@ Compromise of administrative privileges can lead to data breaches, application m
 
 **Evidence:**  
 - Using **Burp Suite**, we conducted a brute-force attack with the known email `admin@juice-sh.op`, which successfully cracked the password.
-- ![Brute Force](screenshots/Screenshot2024-12-27194424.png)
+- ![Brute Force](Screenshots/Screenshot2024-12-27203119.png)
 
 **Remediation Steps:**  
 - Implement rate-limiting and CAPTCHA mechanisms.
@@ -132,7 +132,7 @@ The application allows users to modify the `bid` (basket ID) in session storage.
 
 **Evidence:**  
 - By modifying the `bid` value in session storage to another user's basket ID, the contents of that user's basket were displayed.
-- ![Basket](screenshots/Screenshot2024-12-27233227.png)
+- ![Basket](Screenshots/Screenshot2024-12-27233227.png)
 
 **Remediation Steps:**  
 1. Implement server-side authorization checks to ensure users can only access their own basket.
@@ -156,7 +156,7 @@ The application allows users to edit the quantity of an item by intercepting the
 **Evidence:**  
 - Using Burp Suite, the "Add to Basket" request was intercepted, and the quantity field was changed to `-10`.  
 - On checkout, the total price was calculated as a negative amount, which was refunded to the user's payment method.
-  ![Negative Quanitiy](screenshots/Screenshot2024-12-28013634.png)
+  ![Negative Quanitiy](Screenshots/Screenshot2024-12-28013634.png)
 
 **Remediation Steps:**  
 1. Validate user inputs on the server side to ensure the quantity is always a positive integer.
